@@ -74,7 +74,7 @@ export default function Home() {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+      <div className="min-h-screen bg-[#f0ebf8] dark:bg-[#1a1628] transition-colors">
         <SummaryBar
           cgpa={cgpa}
           wgpa={wgpa}
@@ -88,17 +88,17 @@ export default function Home() {
         <main className="max-w-3xl mx-auto px-4 py-8">
           <div className="flex items-start justify-between mb-8 flex-wrap gap-4">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+              <h1 className="text-2xl font-bold text-violet-950 dark:text-violet-100">
                 GPA Calculator
               </h1>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+              <p className="text-sm text-violet-500 dark:text-violet-400 mt-1">
                 4-year BSc (Hons) IT / Software Engineering
               </p>
             </div>
             <div className="flex items-center gap-2 flex-wrap">
               <button
                 onClick={() => setDarkMode((d) => !d)}
-                className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                className="p-2 rounded-lg text-violet-500 dark:text-violet-400 hover:bg-violet-200 dark:hover:bg-violet-900/40 transition-colors"
                 title="Toggle dark mode"
               >
                 {darkMode ? (
@@ -119,8 +119,8 @@ export default function Home() {
                 }}
                 className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                   whatIfMode
-                    ? "bg-purple-600 text-white"
-                    : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
+                    ? "bg-violet-500 text-white dark:bg-violet-600"
+                    : "bg-violet-200 dark:bg-violet-900/50 text-violet-800 dark:text-violet-300 hover:bg-violet-300 dark:hover:bg-violet-800/60"
                 }`}
               >
                 {whatIfMode ? "Exit What-if" : "What-if Mode"}
@@ -129,22 +129,22 @@ export default function Home() {
               {!showResetConfirm ? (
                 <button
                   onClick={() => setShowResetConfirm(true)}
-                  className="px-3 py-1.5 rounded-lg text-sm font-medium bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors"
+                  className="px-3 py-1.5 rounded-lg text-sm font-medium bg-rose-100 dark:bg-rose-900/20 text-rose-600 dark:text-rose-400 hover:bg-rose-200 dark:hover:bg-rose-900/40 transition-colors"
                 >
                   Reset All
                 </button>
               ) : (
                 <div className="flex items-center gap-1">
-                  <span className="text-xs text-gray-500 dark:text-gray-400">Sure?</span>
+                  <span className="text-xs text-violet-500 dark:text-violet-400">Sure?</span>
                   <button
                     onClick={handleReset}
-                    className="px-2 py-1 rounded text-xs font-medium bg-red-600 text-white hover:bg-red-700"
+                    className="px-2 py-1 rounded text-xs font-medium bg-rose-500 text-white hover:bg-rose-600"
                   >
                     Yes
                   </button>
                   <button
                     onClick={() => setShowResetConfirm(false)}
-                    className="px-2 py-1 rounded text-xs font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
+                    className="px-2 py-1 rounded text-xs font-medium bg-violet-200 dark:bg-violet-900/50 text-violet-800 dark:text-violet-300"
                   >
                     No
                   </button>
@@ -154,7 +154,7 @@ export default function Home() {
           </div>
 
           {whatIfMode && (
-            <div className="mb-6 p-3 rounded-xl bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 text-sm text-purple-700 dark:text-purple-300 flex items-center gap-2">
+            <div className="mb-6 p-3 rounded-xl bg-violet-100 dark:bg-violet-900/20 border border-violet-300 dark:border-violet-800 text-sm text-violet-800 dark:text-violet-300 flex items-center gap-2">
               <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -179,7 +179,7 @@ export default function Home() {
             ))}
           </div>
 
-          <p className="text-center text-xs text-gray-400 dark:text-gray-600 mt-10">
+          <p className="text-center text-xs text-violet-400 dark:text-violet-600 mt-10">
             Grades saved locally in your browser · WGPA: Y2×20% + Y3×30% + Y4×50%
           </p>
         </main>
